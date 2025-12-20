@@ -3,12 +3,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   toggles.forEach(toggle => {
     toggle.addEventListener("click", () => {
-      const dropdown = toggle.nextElementSibling;
-
-      // toggle button state
       toggle.classList.toggle("active");
 
-      // toggle dropdown
+      const dropdown = toggle.nextElementSibling;
+
+      if (!dropdown || !dropdown.classList.contains("member-dropdown")) {
+        console.error("Dropdown not found for:", toggle);
+        return;
+      }
+
       dropdown.classList.toggle("open");
     });
   });
