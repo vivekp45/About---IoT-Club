@@ -28,8 +28,11 @@ body {
   color: #fff;
   font-family: 'Oxanium', sans-serif;
   text-align: center;
-  padding: 160px 20px 60px;
+  padding-top: 120px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
+
 
 /* ===============================
    HEADER
@@ -42,17 +45,23 @@ body {
   height: 90px;
   background: rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(10px);
-  display: grid;
-  grid-template-columns: auto 1fr auto;
+  display: flex;
   align-items: center;
-  padding: 0 30px;
+  justify-content: center;
   z-index: 1000;
   box-shadow: 0 5px 25px rgba(255, 47, 220, 0.25);
 }
 
+.header-left {
+  position: absolute;
+  left: 30px;
+}
+
 .header-left img {
-  width: 65px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
+  object-fit: cover;
   box-shadow: 0 0 15px var(--neon-pink);
 }
 
@@ -61,20 +70,6 @@ body {
   font-size: 1.6rem;
   color: var(--neon-pink);
   text-shadow: 0 0 12px var(--neon-pink);
-}
-
-.header-right a {
-  margin-left: 25px;
-  text-decoration: none;
-  font-family: 'Orbitron', sans-serif;
-  color: var(--neon-cyan);
-  font-size: 0.95rem;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
-}
-
-.header-right a:hover {
-  color: var(--neon-pink);
-  text-shadow: 0 0 10px var(--neon-pink);
 }
 
 /* ===============================
@@ -245,7 +240,7 @@ body {
    FOOTER
 ================================ */
 .site-footer {
-  margin-top: 140px;
+  margin-top: 80px;
   padding: 60px 20px 30px;
   background: linear-gradient(180deg, #0b0014, #000);
   box-shadow: 0 -10px 40px rgba(255, 47, 220, 0.15);
@@ -257,7 +252,6 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 40px;
-  text-align: left;
 }
 
 .footer-brand h3 {
@@ -275,19 +269,12 @@ body {
 .footer-contact h4 {
   font-family: 'Orbitron', sans-serif;
   color: var(--neon-cyan);
-  text-shadow: 0 0 10px var(--neon-cyan);
   margin-bottom: 12px;
 }
 
-.footer-contact p,
-.footer-contact a {
+.footer-contact p {
   color: var(--text-soft);
   font-size: 0.9rem;
-  text-decoration: none;
-}
-
-.footer-socials {
-  margin-top: 15px;
 }
 
 .footer-socials a {
@@ -302,12 +289,12 @@ body {
 }
 
 .footer-bottom {
-  margin-top: 40px;
+  margin-top: 30px;
   text-align: center;
   font-size: 0.8rem;
   color: #aaa;
-  opacity: 0.85;
 }
+
 
 /* ===============================
    RESPONSIVE
