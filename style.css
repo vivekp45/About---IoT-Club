@@ -11,46 +11,77 @@
   --text-soft: #c9a9ff;
 }
 
-/* RESET */
+/* ===============================
+   RESET
+================================ */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* BODY */
+/* ===============================
+   BODY
+================================ */
 body {
   background: radial-gradient(circle at top, var(--bg-glow), var(--bg-mid), var(--bg-main));
   color: #fff;
   font-family: 'Oxanium', sans-serif;
   text-align: center;
-  padding: 120px 20px 60px;
+  padding: 160px 20px 60px;
 }
 
-/* LOGO */
-.logo-wrapper {
+/* ===============================
+   HEADER
+================================ */
+.site-header {
   position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  padding: 0 30px;
+  z-index: 1000;
+  box-shadow: 0 5px 25px rgba(255, 47, 220, 0.25);
 }
 
-.logo-top-right {
-  width: 110px;
+.header-left img {
+  width: 65px;
   border-radius: 50%;
-  box-shadow: 0 0 20px var(--neon-pink);
+  box-shadow: 0 0 15px var(--neon-pink);
 }
 
-/* TITLES */
-.neon-title {
+.header-center h1 {
   font-family: 'Orbitron', sans-serif;
-  font-size: 3rem;
+  font-size: 1.6rem;
   color: var(--neon-pink);
-  text-shadow: 0 0 20px var(--neon-pink);
+  text-shadow: 0 0 12px var(--neon-pink);
 }
 
+.header-right a {
+  margin-left: 25px;
+  text-decoration: none;
+  font-family: 'Orbitron', sans-serif;
+  color: var(--neon-cyan);
+  font-size: 0.95rem;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.header-right a:hover {
+  color: var(--neon-pink);
+  text-shadow: 0 0 10px var(--neon-pink);
+}
+
+/* ===============================
+   TITLES
+================================ */
 .section-title {
-  margin: 80px 0 20px;
+  margin: 90px 0 20px;
   font-family: 'Orbitron', sans-serif;
   font-size: 2.2rem;
   color: var(--neon-pink);
@@ -58,32 +89,41 @@ body {
 }
 
 .sub-section-title {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   font-family: 'Orbitron', sans-serif;
   font-size: 1.4rem;
   color: var(--neon-cyan);
   text-shadow: 0 0 10px var(--neon-cyan);
 }
 
-/* DESCRIPTION */
-.club-desc {
-  max-width: 850px;
-  margin: 25px auto 0;
-  font-size: 1.05rem;
-  line-height: 1.7;
-  color: var(--text-soft);
-}
-
-/* CORE GRID */
+/* ===============================
+   GRIDS
+================================ */
 .core-grid {
   max-width: 1400px;
-  margin: 40px auto 0;
+  margin: 40px auto;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 30px;
 }
 
-/* CARD SHARED */
+.domains-grid {
+  max-width: 1400px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.domain-heads-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+}
+
+/* ===============================
+   CARDS
+================================ */
 .core-card,
 .domain-head-card {
   background: linear-gradient(145deg, var(--card-dark), var(--card-light));
@@ -101,7 +141,9 @@ body {
   box-shadow: 0 0 40px rgba(255, 47, 220, 0.7);
 }
 
-/* IMAGE */
+/* ===============================
+   IMAGE PLACEHOLDER
+================================ */
 .img-placeholder {
   width: 160px;
   height: 160px;
@@ -120,7 +162,9 @@ body {
   object-fit: cover;
 }
 
-/* TEXT */
+/* ===============================
+   CARD TEXT
+================================ */
 .core-card h3,
 .domain-head-card h3 {
   margin-top: 10px;
@@ -134,9 +178,15 @@ body {
   color: var(--text-soft);
 }
 
-/* SOCIALS */
+/* ===============================
+   SOCIAL ICONS
+================================ */
 .socials {
   margin-top: 12px;
+}
+
+.socials a {
+  text-decoration: none;
 }
 
 .socials i {
@@ -147,51 +197,135 @@ body {
 }
 
 .socials i:hover {
-  transform: scale(1.25);
+  transform: scale(1.3);
 }
 
-/* 🔥 IMPORTANT FIX 🔥 */
-/* This guarantees SAME layout on Live Server + GitHub */
-.domains-grid {
-  max-width: 1400px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
+/* ===============================
+   MEMBER DROPDOWN
+================================ */
+.member-toggle {
+  margin: 10px auto 40px;
+  padding: 12px 28px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.1rem;
+  background: transparent;
+  color: var(--neon-cyan);
+  border: 2px solid var(--neon-cyan);
+  border-radius: 30px;
+  cursor: pointer;
+  text-shadow: 0 0 10px var(--neon-cyan);
+  transition: all 0.3s ease;
 }
 
-/* DOMAIN HEADS GRID */
-.domain-heads-grid {
-  width: 100%;
+.member-toggle:hover {
+  background: rgba(0, 234, 255, 0.15);
+  transform: scale(1.05);
+}
+
+.member-toggle .arrow {
+  margin-left: 10px;
+  transition: transform 0.3s ease;
+}
+
+.member-dropdown {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.8s ease;
+}
+
+.member-dropdown.open {
+  max-height: 6000px;
+}
+
+.member-toggle.active .arrow {
+  transform: rotate(180deg);
+}
+
+/* ===============================
+   FOOTER
+================================ */
+.site-footer {
+  margin-top: 140px;
+  padding: 60px 20px 30px;
+  background: linear-gradient(180deg, #0b0014, #000);
+  box-shadow: 0 -10px 40px rgba(255, 47, 220, 0.15);
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  text-align: left;
 }
 
-/* FOOTER */
-.club-socials {
-  margin-top: 120px;
-  font-size: 2rem;
-}
-
-.club-socials i {
-  margin: 0 15px;
+.footer-brand h3 {
+  font-family: 'Orbitron', sans-serif;
   color: var(--neon-pink);
+  text-shadow: 0 0 12px var(--neon-pink);
 }
 
-/* RESPONSIVE */
-@media (max-width: 1200px) {
-  .core-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+.footer-brand p {
+  margin-top: 10px;
+  color: var(--text-soft);
+  line-height: 1.6;
 }
 
-@media (max-width: 700px) {
-  .core-grid,
-  .domain-heads-grid {
-    grid-template-columns: 1fr;
+.footer-contact h4 {
+  font-family: 'Orbitron', sans-serif;
+  color: var(--neon-cyan);
+  text-shadow: 0 0 10px var(--neon-cyan);
+  margin-bottom: 12px;
+}
+
+.footer-contact p,
+.footer-contact a {
+  color: var(--text-soft);
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.footer-socials {
+  margin-top: 15px;
+}
+
+.footer-socials a {
+  margin-right: 18px;
+  font-size: 1.6rem;
+  color: var(--neon-pink);
+  transition: transform 0.3s ease;
+}
+
+.footer-socials a:hover {
+  transform: scale(1.3);
+}
+
+.footer-bottom {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #aaa;
+  opacity: 0.85;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 900px) {
+  .site-header {
+    grid-template-columns: auto 1fr;
+    row-gap: 10px;
+    height: auto;
+    padding: 15px;
   }
 
-  .neon-title {
-    font-size: 2.3rem;
+  .header-right {
+    grid-column: 1 / -1;
+    text-align: center;
+  }
+
+  .header-right a {
+    margin: 0 12px;
   }
 }
