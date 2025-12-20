@@ -1,15 +1,15 @@
-const buttons = document.querySelectorAll(".domain-btn");
+document.addEventListener("DOMContentLoaded", () => {
+  const toggles = document.querySelectorAll(".member-toggle");
 
-buttons.forEach(btn => {
-  btn.addEventListener("click", () => {
-    const content = btn.nextElementSibling;
+  toggles.forEach(toggle => {
+    toggle.addEventListener("click", () => {
+      const dropdown = toggle.nextElementSibling;
 
-    if (content.style.maxHeight) {
-      content.style.maxHeight = null;
-      btn.querySelector("span").textContent = "▼";
-    } else {
-      content.style.maxHeight = content.scrollHeight + "px";
-      btn.querySelector("span").textContent = "▲";
-    }
+      // toggle button state
+      toggle.classList.toggle("active");
+
+      // toggle dropdown
+      dropdown.classList.toggle("open");
+    });
   });
 });
