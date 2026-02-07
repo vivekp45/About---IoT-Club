@@ -1,10 +1,10 @@
 :root {
-  --bg-main: #000;
-  --bg-mid: #050008;
-  --bg-glow: #2b004f;
+  --bg-main: #6f1274c1;
+  --bg-mid: #570f4e;
+  --bg-glow: #000000;
 
-  --card-dark: #14001f;
-  --card-light: #2c003f;
+  --card-dark: #6b1a7b85;
+  --card-light: #7b2b83;
 
   --neon-pink: #ff2fdc;
   --neon-cyan: #00eaff;
@@ -122,27 +122,30 @@ body {
 .core-card,
 .domain-head-card {
   background: linear-gradient(145deg, var(--card-dark), var(--card-light));
-  padding: 25px 20px;
-  border-radius: 16px;
-  box-shadow:
-    0 0 25px rgba(255, 47, 220, 0.35),
-    inset 0 0 15px rgba(255, 47, 220, 0.08);
+
+  /* Tall but narrow */
+  max-width: 200px;          /* horizontally short */
+  padding: 20px 10px;        /* vertical > horizontal */
+  
+  border-radius: 40px;
+box-shadow:
+  0 0 28px rgba(130, 28, 119, 0.532),
+  inset 0 0 12px rgba(201, 80, 181, 0.449);
+
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .core-card:hover,
 .domain-head-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-3px);
   box-shadow: 0 0 40px rgba(255, 47, 220, 0.7);
 }
 
-/* ===============================
-   IMAGE PLACEHOLDER
-================================ */
+/* Small circular image */
 .img-placeholder {
-  width: 160px;
-  height: 160px;
-  margin: 0 auto 15px;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 14px;       /* adds vertical length */
   border-radius: 50%;
   border: 2px dashed var(--neon-pink);
   display: flex;
@@ -156,6 +159,8 @@ body {
   height: 100%;
   object-fit: cover;
 }
+
+
 
 /* ===============================
    CARD TEXT
@@ -315,4 +320,34 @@ body {
   .header-right a {
     margin: 0 12px;
   }
+}
+
+/* ===============================
+   SECTION GRADIENT BLENDING
+================================ */
+section {
+  position: relative;
+  background: transparent;
+  overflow: hidden;
+}
+
+section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(93, 6, 164, 0) 0%,
+    rgba(98, 6, 173, 0.35) 30%,
+    rgba(130, 24, 192, 0.55) 50%,
+    rgba(43, 0, 79, 0.35) 70%,
+    rgba(43, 0, 79, 0.0) 100%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+section > * {
+  position: relative;
+  z-index: 1;
 }
