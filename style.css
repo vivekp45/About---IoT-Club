@@ -6,9 +6,9 @@
   --card-dark: #5b136985;
   --card-light: #4f1a54;
 
-  --neon-pink: #ff2fdc;
-  --neon-cyan: #00eaff;
-  --text-soft: #c9a9ff;
+  --neon-pink: #b01fab;
+  --neon-cyan: #25b6cc;
+  --text-soft: #a37aea;
 }
 
 /* ===============================
@@ -43,13 +43,13 @@ body {
   left: 0;
   width: 100%;
   height: 90px;
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(72, 12, 65, 0.85);
   backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1000;
-  box-shadow: 0 5px 25px rgba(255, 47, 220, 0.25);
+  box-shadow: 0 5px 25px rgba(224, 98, 203, 0.25);
 }
 
 .header-left {
@@ -247,7 +247,7 @@ box-shadow:
 .site-footer {
   margin-top: 80px;
   padding: 60px 20px 30px;
-  background: linear-gradient(180deg, #0b0014, #000);
+  background: linear-gradient(180deg, #5e1972, #1e0721);
   box-shadow: 0 -10px 40px rgba(255, 47, 220, 0.15);
 }
 
